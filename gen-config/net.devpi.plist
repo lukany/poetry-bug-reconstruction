@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>net.devpi</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/jan/Library/Caches/pypoetry/virtualenvs/poetry-bug-I0K0pJnM-py3.11/bin/devpi-server</string>
+		<string>--serverdir</string>
+		<string>/Users/jan/Playground/poetry-bug/.devpi/server</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pkg-a"
+version = "0.1.0"
+description = ""
+authors = ["Jan Lukány <lukany.jan@gmail.com>"]
+
+[[tool.poetry.source]]
+name = "devpi"
+url = "http://localhost:3141/testuser/dev/+simple/"
+priority = "explicit"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pkg-b = { version = "^0.1", source = "devpi" }
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

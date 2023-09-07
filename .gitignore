@@ -1,0 +1,4 @@
+.devpi/
+gen-config
+supervisord.log
+supervisord.pid
