@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "poetry-bug"
+version = "0.1.0"
+description = ""
+authors = ["Jan Lukány <lukany.jan@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+devpi-client = "6.0.5"
+devpi-web = "4.2.1"
+supervisor = "4.2.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

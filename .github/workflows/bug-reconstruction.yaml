@@ -1,0 +1,30 @@
+name: Bug Reconstruction
+
+on: push
+
+jobs:
+  reconstruct-bug:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11.5
+      - name: Install poetry
+        run: curl -sSL https://install.python-poetry.org | python3 - --version 1.6.1
+      - name: Install dependencies
+        run: poetry install
+      - name: Reconstruct bug
+        continue-on-error: true
+        run: |
+          poetry run ./01-start-devpi-server.sh
+          poetry run ./02-publish-pkgs.sh
+          cd pkg-a
+          poetry install -vvv
+      - name: Workaround with priority="supplemental"
+        run: |
+          poetry run ./01-start-devpi-server.sh
+          poetry run ./02-publish-pkgs.sh
+          cd pkg-a
+          sed -I 's/explicit/supplemental/' pyproject.toml
+          poetry install -vvv
