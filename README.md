@@ -15,7 +15,11 @@ This repository is a minimal reproduction of the bug using
 to host the private repository locally.
 Three packages are defined in this repository that depend on each other in the following way:
 ```mermaid
-graph TD
+graph LR
+subgraph Private Repository
+    pkg-b
+    pkg-c
+end
 pkg-a[pkg-a] --depends on--> pkg-b --depends on--> pkg-c
 ```
 

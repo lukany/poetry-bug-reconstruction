@@ -26,5 +26,5 @@ jobs:
           poetry run ./01-start-devpi-server.sh
           poetry run ./02-publish-pkgs.sh
           cd pkg-a
-          sed -I 's/explicit/supplemental/' pyproject.toml
+          sed -i 's/explicit/supplemental/' pyproject.toml
           poetry install -vvv
